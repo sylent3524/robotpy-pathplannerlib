@@ -1,5 +1,5 @@
 robotpy-pathplannerlib
-============
+======================
 
 This is a python implementation of Michael Jansen's pathplannerlib library.
 
@@ -7,7 +7,10 @@ This is a python implementation of Michael Jansen's pathplannerlib library.
 
 Documentation
 =============
+
 * `PathplannerLib Documentation <https://github.com/mjansen4857/pathplanner/wiki/PathPlannerLib:-Java-Usage>`_
 
 License
 =======
+
+RobotPy wrappers are BSD-3-Clause. PathPlannerLib license is unknown.
