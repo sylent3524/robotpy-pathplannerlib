@@ -13,4 +13,4 @@ Documentation
 License
 =======
 
-RobotPy wrappers are BSD-3-Clause. PathPlannerLib license is unknown.
+RobotPy wrappers are BSD-3-Clause. PathPlannerLib license is MIT.
