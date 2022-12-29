@@ -6,6 +6,7 @@ classes:
       PathPlannerTrajectory:
         overloads:
           std::vector<Waypoint>&, std::vector<EventMarker>&, PathConstraints, bool:
+            ignore: true  # private Waypoint class, Java protected overload
           "":
       getStartStopEvent:
       getEndStopEvent:
