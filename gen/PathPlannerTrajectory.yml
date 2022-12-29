@@ -5,31 +5,69 @@ classes:
     methods:
       PathPlannerTrajectory:
         overloads:
-          std::vector<Waypoint>, units::meters_per_second_t, units::meters_per_second_squared_t, bool:
-          std::vector<PathPlannerState>:
+          std::vector<Waypoint>&, std::vector<EventMarker>&, PathConstraints, bool:
           "":
+      getStartStopEvent:
+      getEndStopEvent:
       sample:
       getStates:
+        overloads:
+          '[const]':
+          "":
+      getMarkers:
+        overloads:
+          '[const]':
+          "":
       numStates:
       getState:
+        overloads:
+          int:
+          int [const]:
       getInitialState:
+        overloads:
+          '[const]':
+          "":
       getEndState:
+        overloads:
+          '[const]':
+          "":
+      getInitialPose:
+      getInitialHolonomicPose:
       getTotalTime:
       asWPILibTrajectory:
   PathPlannerTrajectory::PathPlannerState:
     attributes:
       time:
-      position:
       velocity:
       acceleration:
       pose:
-      angularVel:
-      angularAccel:
+      curvature:
+      angularVelocity:
       holonomicRotation:
-      curveRadius:
-      deltaPos:
+      holonomicAngularVelocity:
     methods:
-      interpolate:
+      asWPILibState:
+  PathPlannerTrajectory::EventMarker:
+    attributes:
+      names:
+      time:
+      position:
+  PathPlannerTrajectory::StopEvent:
+    attributes:
+      names:
+      executionBehavior:
+      waitBehavior:
+      waitTime:
+    enums:
+      ExecutionBehavior:
+      WaitBehavior:
+    methods:
+      StopEvent:
+        overloads:
+          ? std::vector<std::string>, pathplanner::PathPlannerTrajectory::StopEvent::ExecutionBehavior,
+            pathplanner::PathPlannerTrajectory::StopEvent::WaitBehavior, units::second_t
+          :
+          "":
   PathPlannerTrajectory::Waypoint:
     attributes:
       anchorPoint:
