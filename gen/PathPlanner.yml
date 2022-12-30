@@ -16,6 +16,12 @@ classes:
           std::string&, units::meters_per_second_t, units::meters_per_second_squared_t, bool:
       generatePath:
         overloads:
+          PathConstraints, bool, std::vector<PathPoint>:
+          units::meters_per_second_t, units::meters_per_second_squared_t, bool, std::vector<PathPoint>:
+            ignore: true  # deprecated
+          PathConstraints, std::vector<PathPoint>:
+          units::meters_per_second_t, units::meters_per_second_squared_t, std::vector<PathPoint>:
+            ignore: true  # deprecated
           PathConstraints, bool, PathPoint, PathPoint, std::initializer_list<PathPoint>:
             ignore: true
           ? units::meters_per_second_t, units::meters_per_second_squared_t, bool,

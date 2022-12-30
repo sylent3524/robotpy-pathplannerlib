@@ -1,12 +1,12 @@
 diff --git a/pathplanner/lib/PathPlanner.cpp b/pathplanner/lib/PathPlanner.cpp
-index 36fdaaf1bc60..3bc52b208f9c 100644
+index 78d6524028c8..e884865ff330 100644
 --- a/pathplanner/lib/PathPlanner.cpp
 +++ b/pathplanner/lib/PathPlanner.cpp
 @@ -7,18 +7,20 @@
+ #include <wpi/SmallString.h>
+ #include <wpi/raw_istream.h>
  #include <units/length.h>
  #include <units/angle.h>
- #include <units/velocity.h>
- #include <vector>
  
 +#include <rpy/Filesystem.h>
 +
