@@ -8,6 +8,7 @@ classes:
       loadPath:
         overloads:
           std::string&, PathConstraints, bool:
+          std::string&, std::vector<PathConstraints>, bool:
           std::string&, units::meters_per_second_t, units::meters_per_second_squared_t, bool:
       loadPathGroup:
         overloads:

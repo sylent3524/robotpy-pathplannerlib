@@ -1,8 +1,8 @@
 [build-system]
 requires = [
-    "robotpy-build<2024.0.0,>=2023.0.0b16",
-    "wpilib<2024.0.0,>=2023.0.0b7",
-    "robotpy-wpimath<2024.0.0,>=2023.0.0b7",
+    "robotpy-build<2024.0.0,>=2023.0.1",
+    "wpilib<2024.0.0,>=2023.2.1.0",
+    "robotpy-wpimath<2024.0.0,>=2023.2.1.0",
 ]
 
 [tool.robotpy-build.metadata]
@@ -13,8 +13,8 @@ author_email = "robotpy@googlegroups.com"
 url = "https://github.com/robotpy/robotpy-pathplannerlib"
 license = "BSD-3-Clause"
 install_requires = [
-    "wpilib<2024.0.0,>=2023.0.0b7",
-    "robotpy-wpimath<2024.0.0,>=2023.0.0b7",
+    "wpilib<2024.0.0,>=2023.2.1.0",
+    "robotpy-wpimath<2024.0.0,>=2023.2.1.0",
 ]
 
 [tool.robotpy-build]
@@ -24,11 +24,12 @@ base_package = "pathplannerlib"
 artifact_id = "PathplannerLib-cpp"
 group_id = "com.pathplanner.lib"
 repo_url = "https://3015rangerrobotics.github.io/pathplannerlib/repo"
-version = "2023.2.1"
+version = "2023.3.4"
 use_sources = true
 sources = [
     "pathplanner/lib/PathPlanner.cpp",
     "pathplanner/lib/PathPlannerTrajectory.cpp",
+    "pathplanner/lib/controllers/PPHolonomicDriveController.cpp",
 ]
 sources_classifier = "source"
 
@@ -60,3 +61,19 @@ PathConstraints = "pathplanner/lib/PathConstraints.h"
 PathPlanner = "pathplanner/lib/PathPlanner.h"
 PathPlannerTrajectory = "pathplanner/lib/PathPlannerTrajectory.h"
 PathPoint = "pathplanner/lib/PathPoint.h"
+
+# pathplanner/lib/auto
+# BaseAutoBuilder = "pathplanner/lib/auto/BaseAutoBuilder.h"
+# MecanumAutoBuilder = "pathplanner/lib/auto/MecanumAutoBuilder.h"
+# PIDConstants = "pathplanner/lib/auto/PIDConstants.h"
+# RamseteAutoBuilder = "pathplanner/lib/auto/RamseteAutoBuilder.h"
+# SwerveAutoBuilder = "pathplanner/lib/auto/SwerveAutoBuilder.h"
+
+# pathplanner/lib/commands
+# FollowPathWithEvents = "pathplanner/lib/commands/FollowPathWithEvents.h"
+# PPMecanumControllerCommand = "pathplanner/lib/commands/PPMecanumControllerCommand.h"
+# PPRamseteCommand = "pathplanner/lib/commands/PPRamseteCommand.h"
+# PPSwerveControllerCommand = "pathplanner/lib/commands/PPSwerveControllerCommand.h"
+
+# pathplanner/lib/controllers
+PPHolonomicDriveController = "pathplanner/lib/controllers/PPHolonomicDriveController.h"

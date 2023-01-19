@@ -7,7 +7,11 @@ classes:
         overloads:
           std::vector<Waypoint>&, std::vector<EventMarker>&, PathConstraints, bool:
             ignore: true  # private Waypoint class, Java protected overload
+          std::vector<Waypoint>&, std::vector<EventMarker>&, PathConstraints, bool, bool:
+            ignore: true  # private Waypoint class, Java protected overload
           "":
+      transformStateForAlliance:
+      transformTrajectoryForAlliance:
       getStartStopEvent:
       getEndStopEvent:
       sample:
