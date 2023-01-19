@@ -18,10 +18,12 @@ classes:
       getStates:
         overloads:
           '[const]':
+            ignore: true
           "":
       getMarkers:
         overloads:
           '[const]':
+            ignore: true
           "":
       numStates:
       getState:
