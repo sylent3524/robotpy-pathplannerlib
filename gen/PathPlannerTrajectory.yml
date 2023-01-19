@@ -30,13 +30,16 @@ classes:
         overloads:
           int:
           int [const]:
+            ignore: true
       getInitialState:
         overloads:
           '[const]':
+            ignore: true
           "":
       getEndState:
         overloads:
           '[const]':
+            ignore: true
           "":
       getInitialPose:
       getInitialHolonomicPose:
