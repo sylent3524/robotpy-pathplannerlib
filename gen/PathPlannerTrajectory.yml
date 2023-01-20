@@ -5,31 +5,79 @@ classes:
     methods:
       PathPlannerTrajectory:
         overloads:
-          std::vector<Waypoint>, units::meters_per_second_t, units::meters_per_second_squared_t, bool:
-          std::vector<PathPlannerState>:
+          std::vector<Waypoint>&, std::vector<EventMarker>&, PathConstraints, bool:
+            ignore: true  # private Waypoint class, Java protected overload
+          std::vector<Waypoint>&, std::vector<EventMarker>&, PathConstraints, bool, bool:
+            ignore: true  # private Waypoint class, Java protected overload
           "":
+      transformStateForAlliance:
+      transformTrajectoryForAlliance:
+      getStartStopEvent:
+      getEndStopEvent:
       sample:
       getStates:
+        overloads:
+          '[const]':
+            ignore: true
+          "":
+      getMarkers:
+        overloads:
+          '[const]':
+            ignore: true
+          "":
       numStates:
       getState:
+        overloads:
+          int:
+          int [const]:
+            ignore: true
       getInitialState:
+        overloads:
+          '[const]':
+            ignore: true
+          "":
       getEndState:
+        overloads:
+          '[const]':
+            ignore: true
+          "":
+      getInitialPose:
+      getInitialHolonomicPose:
       getTotalTime:
       asWPILibTrajectory:
   PathPlannerTrajectory::PathPlannerState:
     attributes:
       time:
-      position:
       velocity:
       acceleration:
       pose:
-      angularVel:
-      angularAccel:
+      curvature:
+      angularVelocity:
       holonomicRotation:
-      curveRadius:
-      deltaPos:
+      holonomicAngularVelocity:
     methods:
-      interpolate:
+      asWPILibState:
+  PathPlannerTrajectory::EventMarker:
+    attributes:
+      names:
+      time:
+      position:
+  PathPlannerTrajectory::StopEvent:
+    attributes:
+      names:
+      executionBehavior:
+      waitBehavior:
+      waitTime:
+    enums:
+      ExecutionBehavior:
+      WaitBehavior:
+    methods:
+      StopEvent:
+        overloads:
+          ? std::vector<std::string>, pathplanner::PathPlannerTrajectory::StopEvent::ExecutionBehavior,
+            pathplanner::PathPlannerTrajectory::StopEvent::WaitBehavior, units::second_t
+          :
+          "":
   PathPlannerTrajectory::Waypoint:
     attributes:
       anchorPoint:
