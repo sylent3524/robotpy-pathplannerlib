@@ -2,9 +2,7 @@ diff --git a/pathplanner/lib/PathPlanner.cpp b/pathplanner/lib/PathPlanner.cpp
 index 78d6524028c8..e884865ff330 100644
 --- a/pathplanner/lib/PathPlanner.cpp
 +++ b/pathplanner/lib/PathPlanner.cpp
-@@ -7,18 +7,20 @@
- #include <wpi/SmallString.h>
- #include <wpi/raw_istream.h>
+@@ -9,14 +9,16 @@
  #include <units/length.h>
  #include <units/angle.h>
  
@@ -23,5 +21,14 @@ index 78d6524028c8..e884865ff330 100644
  
  	std::error_code error_code;
  	wpi::raw_fd_istream input { filePath, error_code };
+@@ -53,8 +55,8 @@ std::vector<PathPlannerTrajectory> PathPlanner::loadPathGroup(
+ 				"At least one PathConstraints is required but none were provized");
+ 	}
  
- 	if (error_code) {
+-	std::string const filePath = frc::filesystem::GetDeployDirectory()
+-			+ "/pathplanner/" + name + ".path";
++	std::string const filePath = (robotpy::filesystem::GetDeployDirectoryFs()
++			/ "pathplanner" / (name + ".path")).string();
+ 
+ 	std::error_code error_code;
+ 	wpi::raw_fd_istream input { filePath, error_code };
