@@ -3,6 +3,7 @@ requires = [
     "robotpy-build<2024.0.0,>=2023.0.1",
     "wpilib<2024.0.0,>=2023.2.1.0",
     "robotpy-wpimath<2024.0.0,>=2023.2.1.0",
+    "robotpy-commands-v2<2024.0.0,>=2023.4.2.0", # TODO: no effect
 ]
 
 [tool.robotpy-build.metadata]
@@ -30,6 +31,7 @@ sources = [
     "pathplanner/lib/PathPlanner.cpp",
     "pathplanner/lib/PathPlannerTrajectory.cpp",
     "pathplanner/lib/controllers/PPHolonomicDriveController.cpp",
+    "pathplanner/lib/commands/FollowPathWithEvents.cpp",
 ]
 sources_classifier = "source"
 
@@ -46,6 +48,7 @@ depends = [
     "wpimath_geometry",
     "wpiHal",
     "wpiutil",
+    "commands_v2", # ? this may not be needed if the robotpy-commands-v2 requirement works
 ]
 
 sources = [
@@ -70,7 +73,7 @@ PathPoint = "pathplanner/lib/PathPoint.h"
 # SwerveAutoBuilder = "pathplanner/lib/auto/SwerveAutoBuilder.h"
 
 # pathplanner/lib/commands
-# FollowPathWithEvents = "pathplanner/lib/commands/FollowPathWithEvents.h"
+FollowPathWithEvents = "pathplanner/lib/commands/FollowPathWithEvents.h"
 # PPMecanumControllerCommand = "pathplanner/lib/commands/PPMecanumControllerCommand.h"
 # PPRamseteCommand = "pathplanner/lib/commands/PPRamseteCommand.h"
 # PPSwerveControllerCommand = "pathplanner/lib/commands/PPSwerveControllerCommand.h"

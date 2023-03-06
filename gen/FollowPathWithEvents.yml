@@ -1,0 +1,14 @@
+---
+
+extra_includes:
+- frc/Timer.h
+
+classes:
+  FollowPathWithEvents:
+    subpackage: commands
+    methods:
+      FollowPathWithEvents:
+      Initialize:
+      Execute:
+      End:
+      IsFinished:
